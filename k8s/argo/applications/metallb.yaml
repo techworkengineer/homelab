@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metallb
-  namespace: metallb-system
+  namespace: argo-cd
 spec:
   project: default
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: metallb-system
   sources:
     - repoURL: "https://metallb.github.io/metallb"
       chart: metallb
